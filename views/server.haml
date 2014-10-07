@@ -1,5 +1,6 @@
 %h3
-  = server.system.name
+  %a{href: server.url}
+    = server.system.name
   - if server.system.status == 0
     %i.fa.fa-check-circle
   - else

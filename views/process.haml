@@ -1,5 +1,6 @@
 %tr{class: "#{ process.monitored == 1 ? '' : 'danger' }"}
   %td
+    = partial(:dots, locals:{object: process})
     = process.name
   %td
     = process.cpu

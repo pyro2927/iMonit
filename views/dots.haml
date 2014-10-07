@@ -1,0 +1,10 @@
+// status dots, showing off if we are connected, and if we are monitoring
+- if object.status == 0
+  %i.fa.fa-circle.green
+- else
+  %i.fa.fa-circle.red
+
+- if object.monitored == 1
+  %i.fa.fa-circle.green
+- else
+  %i.fa.fa-circle.red
