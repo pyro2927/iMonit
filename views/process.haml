@@ -1,0 +1,9 @@
+%tr{class: "#{ process.monitored == 1 ? '' : 'danger' }"}
+  %td
+    = process.name
+  %td
+    = process.cpu
+  %td
+    = process.memory
+  %td.text-right
+    = process.uptime
