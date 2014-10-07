@@ -11,6 +11,8 @@ gem 'monittr', '~> 0.0.7'
 group :development do
   gem 'dm-sqlite-adapter', '~> 1.2.0'
   gem 'rerun'
+  gem 'fakeweb'
+  gem 'pry'
 end
 
 group :production do

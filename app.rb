@@ -4,6 +4,7 @@ require 'haml'
 require 'omniauth-github'
 require 'sinatra/partial'
 require 'monittr'
+require 'fakeweb'
 
 configure do
   enable :sessions
@@ -14,6 +15,9 @@ configure do
   end
   use OmniAuth::Builder do
       provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
+  end
+  unless ENV['RACK_ENV'] == 'production'
+    FakeWeb.register_uri(:get, 'http://localhost:2812/_status?format=xml', :body => File.read('status.xml') )
   end
 end
 
@@ -42,6 +46,6 @@ get '/auth/failure' do
 end
 
 get '/' do
-  @cluster = Monittr::Cluster.new ['http://192.168.33.10:2812/']
+  @cluster = Monittr::Cluster.new ['http://localhost:2812/']
   haml :index
 end
