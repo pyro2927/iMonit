@@ -1,6 +1,9 @@
 require 'rubygems'
 require 'sinatra'
+require 'haml'
 require 'omniauth-github'
+require 'sinatra/partial'
+require 'monittr'
 
 configure do
   enable :sessions
@@ -39,5 +42,6 @@ get '/auth/failure' do
 end
 
 get '/' do
-  erb "Hello omniauth-twitter!"
+  @cluster = Monittr::Cluster.new ['http://192.168.33.10:2812/']
+  haml :index
 end

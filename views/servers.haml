@@ -1,0 +1,3 @@
+%section.container
+  - servers.each do |s|
+    = partial(:server, locals:{server: s})

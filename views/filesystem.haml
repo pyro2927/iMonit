@@ -1,0 +1,8 @@
+%tr
+  %td
+    = filesystem.name
+  %td
+    %div.progress
+      %div.progress-bar{style:"width:#{filesystem.percent}%"}
+  %td.text-right
+    = "#{filesystem.percent}%"

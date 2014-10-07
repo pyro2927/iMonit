@@ -1,0 +1,14 @@
+%h3
+  = server.system.name
+  %h4
+    Filesystems
+  %table.table
+    %thead
+      %th{style: "width: 10%"}
+        Name
+      %th
+      %th.text-right{style: "width: 10%"}
+        Usage
+    %tbody
+      - server.filesystems.each do |fs|
+        = partial(:filesystem, locals: {filesystem: fs})
