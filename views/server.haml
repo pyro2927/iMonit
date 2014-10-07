@@ -34,3 +34,21 @@
   %tbody
     - server.processes.each do |p|
       = partial(:process, locals: {process: p})
+
+%h4
+  Hosts
+%table.table
+  %thead
+    %th
+      Name
+    %th
+      Hostname
+    %th
+      Port
+    %th
+      Protocol
+    %th.text-right{style: "width: 17%"}
+      Response Time
+  %tbody
+    - server.hosts.each do |h|
+      = partial(:host, locals: {host: h})

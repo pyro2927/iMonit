@@ -1,0 +1,12 @@
+%tr{class: "#{ host.monitored == 1 ? '' : 'danger' }"}
+  %td
+    = partial(:dots, locals:{object: host})
+    = host.name
+  %td
+    = host.host_name
+  %td
+    = host.port_number
+  %td
+    = host.protocol
+  %td.text-right
+    = host.response_time
