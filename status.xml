@@ -515,5 +515,23 @@
           <responsetime>0.009</responsetime>
       </port>
   </service>
+  <service type="4">
+    <name>vagrant.local</name>
+    <collected_sec>1412698423</collected_sec>
+    <collected_usec>937202</collected_usec>
+    <status>0</status>
+    <status_hint>0</status_hint>
+    <monitor>1</monitor>
+    <monitormode>0</monitormode>
+    <pendingaction>0</pendingaction>
+    <port>
+      <hostname>127.0.0.1</hostname>
+      <portnumber>5432</portnumber>
+      <request/>
+      <protocol>PGSQL</protocol>
+      <type>TCP</type>
+      <responsetime>0.001</responsetime>
+    </port>
+  </service>
 
 </monit>
