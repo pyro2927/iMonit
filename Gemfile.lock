@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/softwareforgood/monittr.git
+  revision: 0cc84c645e89d2d6bcdf125907b6a830b6c72f13
+  branch: master
+  specs:
+    monittr (0.0.7)
+      bundler (> 1)
+      nokogiri
+      rest-client
+      sinatra
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -78,13 +89,8 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     method_source (0.8.2)
-    mime-types (2.3)
+    mime-types (2.4.1)
     mini_portile (0.6.0)
-    monittr (0.0.7)
-      bundler (> 1)
-      nokogiri
-      rest-client
-      sinatra
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -145,7 +151,7 @@ DEPENDENCIES
   dm-sqlite-adapter (~> 1.2.0)
   fakeweb
   haml (~> 4.0.5)
-  monittr (~> 0.0.7)
+  monittr!
   omniauth (~> 1.2.2)
   omniauth-github (~> 1.1.2)
   pry
