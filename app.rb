@@ -86,7 +86,7 @@ get '/auth/failure' do
 end
 
 get '/' do
-  @cluster = Monittr::Cluster.new [ MonitServer.all.map {|s| s.url } ]
+  @cluster = Monittr::Cluster.new(MonitServer.all.map {|s| s.url })
   haml :index
 end
 

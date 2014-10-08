@@ -6,49 +6,52 @@
   - else
     %i.fa.fa-times-circle
 
-%h4
-  Filesystems
-%table.table
-  %thead
-    %th{style: "width: 10%"}
-      Name
-    %th
-    %th.text-right{style: "width: 10%"}
-      Usage
-  %tbody
-    - server.filesystems.each do |fs|
-      = partial(:filesystem, locals: {filesystem: fs})
+- if server.filesystems.count > 0
+  %h4
+    Filesystems
+  %table.table
+    %thead
+      %th{style: "width: 10%"}
+        Name
+      %th
+      %th.text-right{style: "width: 10%"}
+        Usage
+    %tbody
+      - server.filesystems.each do |fs|
+        = partial(:filesystem, locals: {filesystem: fs})
 
-%h4
-  Processes
-%table.table
-  %thead
-    %th
-      Name
-    %th{style: "width: 17%"}
-      CPU
-    %th{style: "width: 17%"}
-      Memory
-    %th.text-right{style: "width: 17%"}
-      Uptime
-  %tbody
-    - server.processes.each do |p|
-      = partial(:process, locals: {process: p})
+- if server.processes.count > 0
+  %h4
+    Processes
+  %table.table
+    %thead
+      %th
+        Name
+      %th{style: "width: 17%"}
+        CPU
+      %th{style: "width: 17%"}
+        Memory
+      %th.text-right{style: "width: 17%"}
+        Uptime
+    %tbody
+      - server.processes.each do |p|
+        = partial(:process, locals: {process: p})
 
-%h4
-  Hosts
-%table.table
-  %thead
-    %th
-      Name
-    %th
-      Hostname
-    %th
-      Port
-    %th
-      Protocol
-    %th.text-right{style: "width: 17%"}
-      Response Time
-  %tbody
-    - server.hosts.each do |h|
-      = partial(:host, locals: {host: h})
+- if server.hosts.count > 0
+  %h4
+    Hosts
+  %table.table
+    %thead
+      %th
+        Name
+      %th
+        Hostname
+      %th
+        Port
+      %th
+        Protocol
+      %th.text-right{style: "width: 17%"}
+        Response Time
+    %tbody
+      - server.hosts.each do |h|
+        = partial(:host, locals: {host: h})
