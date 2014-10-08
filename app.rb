@@ -65,6 +65,16 @@ helpers do
     end
   end
 
+  def icon_for_protocol(protocol)
+    if protocol =~ /sql/i
+      "<i class='fa fa-database'></i>"
+    elsif protocol.upcase == "HTTP"
+      "<i class='fa fa-globe'></i>"
+    else
+      ""
+    end
+  end
+
 end
 
 before do
