@@ -86,6 +86,16 @@ get '/auth/failure' do
 end
 
 get '/' do
-  @cluster = Monittr::Cluster.new ['http://localhost:2812/']
+  @cluster = Monittr::Cluster.new [ MonitServer.all.map {|s| s.url } ]
   haml :index
+end
+
+get '/new' do
+  haml :new_monit_server_form
+end
+
+post '/new' do
+  # create new monit server
+  MonitServer.create(url: params[:url])
+  redirect '/'
 end

@@ -26,18 +26,10 @@
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
             %li
-              %a{:href => "/blah"} Blah
+              %a{:href => "/new"} Add Monit Server
           %ul.nav.navbar-nav.navbar-right
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                = current_user
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  %a{:href => "/login/form"} Login
-                %li.divider
-                %li
-                  %a{:href => "/logout"} Logout
+            %li
+              %a{:href => "/logout"} Logout
         / /.nav-collapse
       %div
         - if @error then
