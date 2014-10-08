@@ -6,10 +6,10 @@ Easy/centralized/clean system monitoring
 
 - [ ] Finish
 - [ ] Create/store user accounts after omniauth
-- [ ] Store system configs/objects with datamapper
+- [x] Store system configs/objects with datamapper
 
 ### Add support for working with
 
-- [ ] Monit
+- [x] Monit
 - [ ] iStatd
 - [ ] ESXi hypervisor
