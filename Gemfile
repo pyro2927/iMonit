@@ -9,12 +9,12 @@ gem 'haml', '~> 4.0.5'
 gem 'monittr', git: 'https://github.com/softwareforgood/monittr.git', branch: 'master'
 
 group :development do
-  gem 'dm-sqlite-adapter', '~> 1.2.0'
+  gem 'dm-sqlite-adapter', '~> 1.2.0', require: true
   gem 'rerun'
   gem 'fakeweb'
   gem 'pry'
 end
 
 group :production do
-  gem 'dm-postgres-adapter', '~> 1.2.0'
+  gem 'dm-postgres-adapter', '~> 1.2.0', require: true
 end

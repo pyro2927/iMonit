@@ -5,6 +5,7 @@ require 'omniauth-github'
 require 'sinatra/partial'
 require 'monittr'
 require 'fakeweb'
+require 'data_mapper'
 
 configure do
   enable :sessions
@@ -19,6 +20,23 @@ configure do
   unless ENV['RACK_ENV'] == 'production'
     FakeWeb.register_uri(:get, 'http://localhost:2812/_status?format=xml', :body => File.read('status.xml') )
   end
+
+  # setup datamapper
+  unless ENV['DATABASE_URL'].nil?
+    DataMapper.setup(:default, ENV['DATABASE_URL'])
+  else
+    DataMapper.setup(:default, "sqlite://#{Dir.pwd}/imonit.db")
+  end
+
+  # Datamapper classes
+  class MonitServer
+    include DataMapper::Resource
+    property :id,         Serial
+    property :url,        String
+  end
+
+  DataMapper.finalize
+  DataMapper.auto_upgrade!
 end
 
 helpers do
